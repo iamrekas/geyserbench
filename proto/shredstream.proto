@@ -9,6 +9,11 @@ service ShrederService {
   rpc SubscribeTransactions(stream SubscribeTransactionsRequest) returns (stream SubscribeTransactionsResponse);
 }
 
+// ShredstreamProxy service for subscribing to entries
+service ShredstreamProxy {
+  rpc SubscribeEntries(SubscribeEntriesRequest) returns (stream Entry);
+}
+
 message SubscribeEntriesRequest {
   // tbd: we may want to add filters here
 }

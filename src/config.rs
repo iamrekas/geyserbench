@@ -34,6 +34,8 @@ pub enum EndpointKind {
     Thor,
     Shreder,
     Jetstream,
+    #[serde(rename = "shredstream_proxy")]
+    ShredstreamProxy,
 }
 
 #[derive(Debug, Clone, Copy, Default, Deserialize, Serialize)]
