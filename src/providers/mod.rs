@@ -8,6 +8,7 @@ use crate::{
 
 pub mod arpc;
 pub mod yellowstone;
+pub mod yellowstone_accounts;
 pub mod thor;
 pub mod shreder;
 pub mod jetstream;
@@ -28,6 +29,7 @@ pub trait GeyserProvider: Send + Sync {
 pub fn create_provider(kind: &EndpointKind) -> Box<dyn GeyserProvider> {
     match kind {
         EndpointKind::Yellowstone => Box::new(yellowstone::YellowstoneProvider),
+        EndpointKind::YellowstoneAccounts => Box::new(yellowstone_accounts::YellowstoneAccountsProvider),
         EndpointKind::Arpc => Box::new(arpc::ArpcProvider),
         EndpointKind::Thor => Box::new(thor::ThorProvider),
         EndpointKind::Shreder => Box::new(shreder::ShrederProvider),

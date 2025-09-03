@@ -30,6 +30,8 @@ pub struct Endpoint {
 #[serde(rename_all = "lowercase")]
 pub enum EndpointKind {
     Yellowstone,
+    #[serde(rename = "yellowstone_accounts")]
+    YellowstoneAccounts,
     Arpc,
     Thor,
     Shreder,
